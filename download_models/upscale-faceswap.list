@@ -1,0 +1,4 @@
+upscale_models|https://huggingface.co/Minos1900/Homoerotic/resolve/7db54ba6036a130eec54de0f680536ceb0ab1c10/RealESRGAN_x4plus.safetensors
+upscale_models|https://huggingface.co/uwg/upscaler/resolve/main/ESRGAN/4x_NMKD-Siax_200k.pth
+upscale_models|https://huggingface.co/utnah/esrgan/resolve/main/4x-AnimeSharp.pth
+insightface|https://huggingface.co/ezioruan/inswapper_128.onnx/resolve/main/inswapper_128.onnx
