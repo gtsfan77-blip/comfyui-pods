@@ -13,15 +13,27 @@ set -euo pipefail
 #   DIR|URL
 #   DIR|URL|FILENAME
 #
-# Auth:
-#   export CIVITAI_TOKEN="xxx"
-#   export HF_TOKEN="xxx"
+# Tokens:
+#   Store tokens in token.txt:
+#
+#   CIVITAI_TOKEN=xxx
+#   HF_TOKEN=xxx
+#
 # =========================
 
 BASE_DIR="/models"
 INPUT_FILE="${1:-models.list}"
 MAX_PARALLEL=4
 LOG_FILE="./download.log"
+TOKEN_FILE="./token.txt"
+
+# Load tokens from token.txt
+if [ -f "$TOKEN_FILE" ]; then
+  # shellcheck disable=SC1090
+  source "$TOKEN_FILE"
+else
+  echo "Warning: token.txt not found"
+fi
 
 # Initialize log
 echo "==== Download session $(date '+%Y-%m-%d %H:%M:%S') ====" >>"$LOG_FILE"
